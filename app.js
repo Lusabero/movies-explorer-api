@@ -17,7 +17,7 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/moviesdb');
 app.use(requestLogger);
 app.use(cors());
-app.use(limiter);
+app.post(limiter);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
